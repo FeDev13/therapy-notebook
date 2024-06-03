@@ -98,8 +98,8 @@ export default function Home() {
                             value={editContent}
                             onChange={(e) => setEditContent(e.target.value)}
                         />
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-4" onClick={() => editNote(index, editTitle, editContent)}>Save</button>
-                        <button className= "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => setEditIndex(null)}>Cancel</button>
+                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-4" onClick={() => editNote(index, editTitle, editContent)}>Guardar cambios</button>
+                        <button className= "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => setEditIndex(null)}>Cancelar</button>
                     </div>
                 ) : (
                     <Note
