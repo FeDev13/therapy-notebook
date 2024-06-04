@@ -82,12 +82,12 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1 className=" text-3xl">Notas de terapia</h1>
+      <h1 className=" text-3xl text-center">Notas de terapia</h1>
       <CreateNote onAdd={addNote} />
-      <div className=" grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-3 justify-between w-[70%]">
+      <div className=" grid grid-cols-1 gap-4 mt-8 md:grid-cols-2 lg:grid-cols-3 justify-between w-[100%]">
       {notes.map((noteItem, index) => (
                 editIndex === index ? (
-                    <div key={index} className="border p-4 mb-4 w-full max-w-md bg-yellow-200 rounded-lg top-25 absolute text-center">
+                    <div key={index} className="border p-4 mb-4 w-full max-w-md bg-yellow-200 rounded-lg lg:top-25 lg:absolute text-center">
                         <input
                             type="text"
                             value={editTitle}
@@ -98,8 +98,11 @@ export default function Home() {
                             value={editContent}
                             onChange={(e) => setEditContent(e.target.value)}
                         />
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-4" onClick={() => editNote(index, editTitle, editContent)}>Guardar cambios</button>
+                        <div className="flex justify-between">
+                          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mx-4" onClick={() => editNote(index, editTitle, editContent)}>Guardar cambios</button>
                         <button className= "bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => setEditIndex(null)}>Cancelar</button>
+                        </div>
+                        
                     </div>
                 ) : (
                     <Note
